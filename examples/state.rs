@@ -21,7 +21,7 @@ async fn main() {
         .unwrap();
 }
 
-#[derive(Clone, Serialize, Deserialize)]
+#[derive(Serialize, Deserialize)]
 struct State {
     counter: i64,
 }

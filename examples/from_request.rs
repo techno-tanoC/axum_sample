@@ -5,7 +5,7 @@ use axum::{
     response::{self, IntoResponse},
 };
 use http::Response;
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 use std::net::SocketAddr;
 use tower::BoxError;
 
@@ -69,6 +69,6 @@ async fn user_message(
     let user_id = params.user_id;
     let name = params.name;
     response::Json(Message {
-        message: format!("user_id {} is {}", user_id, name),
+        message: format!("Hello {}, your id is {}", name, user_id),
     })
 }

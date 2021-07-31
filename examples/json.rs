@@ -1,9 +1,9 @@
 use axum::{
     extract,
-    response,
     prelude::*,
+    response,
 };
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 use std::net::SocketAddr;
 
 #[tokio::main]
