@@ -17,3 +17,6 @@ name = "helloworld"
 
 [[example]]
 name = "json"
+
+[[example]]
+name = "path_params"
