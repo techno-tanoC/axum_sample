@@ -20,3 +20,6 @@ name = "json"
 
 [[example]]
 name = "path_params"
+
+[[example]]
+name = "path_json"
