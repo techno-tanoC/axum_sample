@@ -33,3 +33,6 @@ name = "from_request"
 
 [[example]]
 name = "state"
+
+[[example]]
+name = "response"
