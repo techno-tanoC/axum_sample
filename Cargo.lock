@@ -56,10 +56,13 @@ name = "axum_sample"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "http",
+ "http-body",
  "hyper",
  "serde",
  "serde_json",
  "tokio",
+ "tower",
 ]
 
 [[package]]
