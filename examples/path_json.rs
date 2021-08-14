@@ -10,7 +10,7 @@ use std::net::SocketAddr;
 async fn main() {
     let app = route("/users/:user_id", post(user_message));
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-    hyper::Server::bind(&addr)
+    axum::Server::bind(&addr)
         .serve(app.into_make_service())
         .await
         .unwrap();
