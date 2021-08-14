@@ -35,13 +35,10 @@ where
     type Rejection = Response<Body>;
 
     async fn from_request(req: &mut RequestParts<B>) -> Result<Self, Self::Rejection> {
-        let url_params = extract::UrlParamsMap::from_request(req)
+        let url_params = extract::Path::from_request(req)
             .await
             .map_err(IntoResponse::into_response)?;
-        let user_id = url_params
-            .get_typed("user_id")
-            .unwrap()
-            .unwrap();
+        let user_id = url_params.0;
 
         let json_params: extract::Json<serde_json::Value> = extract::Json::from_request(req)
             .await

@@ -27,11 +27,11 @@ struct Message {
 }
 
 async fn user_message(
-    extract::UrlParams(params): extract::UrlParams<(u64,)>,
-    extract::Json(name): extract::Json<Name>,
+    params: extract::Path<(u64,)>,
+    name: extract::Json<Name>,
 ) -> response::Json<Message> {
-    let user_id = params.0;
-    let name = name.name;
+    let user_id = (*params).0;
+    let name = &name.name;
     response::Json(Message {
         message: format!("Hello {}, your id is {}", name, user_id),
     })

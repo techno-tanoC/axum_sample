@@ -14,8 +14,8 @@ async fn main() {
         .unwrap();
 }
 
-async fn user_post(extract::UrlParams(params): extract::UrlParams<(u64, u64)>) -> String {
-    let user_id = params.0;
-    let post_id = params.1;
+async fn user_post(params: extract::Path<(u64, u64)>) -> String {
+    let user_id = (*params).0;
+    let post_id = (*params).1;
     format!("user_id: {}, post_id: {}", user_id, post_id)
 }

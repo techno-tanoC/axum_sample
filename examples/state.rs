@@ -28,7 +28,7 @@ struct State {
 
 type SharedState = Arc<Mutex<State>>;
 
-async fn increment(extract::Extension(state): extract::Extension<SharedState>) -> response::Json<State> {
+async fn increment(state: extract::Extension<SharedState>) -> response::Json<State> {
     let mut s = state.lock().await;
     s.counter += 1;
     let current = s.counter;

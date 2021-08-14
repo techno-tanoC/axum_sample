@@ -26,7 +26,7 @@ struct Pong {
     count: i64,
 }
 
-async fn ping(extract::Json(ping): extract::Json<Ping>) -> response::Json<Pong> {
+async fn ping(ping: extract::Json<Ping>) -> response::Json<Pong> {
     response::Json(Pong {
         count: ping.count + 1,
     })
